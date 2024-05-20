@@ -18,3 +18,15 @@ CREATE TABLE products (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT seller_fk FOREIGN KEY (seller_id_fk) REFERENCES users(user_id)
 );
+
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    user_id_fk INTEGER NOT NULL,
+    product_id_fk INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    price INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT user_id_fk FOREIGN KEY (user_id_fk) REFERENCES users(user_id)
+    CONSTRAINT product_id_fk FOREIGN KEY (product_id_fk) REFERENCES products(product_id_fk)
+);
