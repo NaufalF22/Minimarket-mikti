@@ -13,3 +13,5 @@ func ResponseClient(code int, msg string, data interface{}) ResponseClientModel 
 		Data:    data,
 	}
 }
+
+type CustomResponse map[string]interface{}

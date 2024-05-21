@@ -35,3 +35,11 @@ func (pR *ProductRepo) GetAll() ([]domain.Products, error) {
 
 	return products, nil
 }
+
+func (pR *ProductRepo) BuyProduct(product domain.Products) (domain.Products, error) {
+	if err := pR.DB.Model(domain.Products{}).Where("product_id = ?", product.ProductID).Updates(&product).Error; err != nil {
+		return domain.Products{}, err
+	}
+
+	return product, nil
+}
