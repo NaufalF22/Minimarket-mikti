@@ -27,6 +27,6 @@ CREATE TABLE orders (
     price INTEGER NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT user_id_fk FOREIGN KEY (user_id_fk) REFERENCES users(user_id)
-    CONSTRAINT product_id_fk FOREIGN KEY (product_id_fk) REFERENCES products(product_id_fk)
+    CONSTRAINT user_fk FOREIGN KEY (user_id_fk) REFERENCES users(user_id),
+    CONSTRAINT product_fk FOREIGN KEY (product_id_fk) REFERENCES products(product_id)
 );
