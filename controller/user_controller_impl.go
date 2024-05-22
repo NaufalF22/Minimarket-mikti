@@ -1,5 +1,7 @@
 package controller
 
+import "minimarket_mikti/service"
+
 type UserControllerImpl struct {
 	UserService service.UserService
 }

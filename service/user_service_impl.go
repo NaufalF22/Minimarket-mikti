@@ -1,5 +1,7 @@
 package service
 
+import "minimarket_mikti/repository"
+
 type UserServiceImpl struct {
 	repository   repository.UserRepository
 	tokenUseCase helper.TokenUseCase
